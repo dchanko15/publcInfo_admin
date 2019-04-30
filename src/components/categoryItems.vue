@@ -17,7 +17,7 @@
                         </div>
                     </div>-->
                     <div class="row">
-                        <div class="col-xs-1 col-sm-1 end-xs">
+                        <div class="col-xs-2 col-sm-1 end-xs">
                             <h4>{{subCategory}} </h4>
                         </div>
                         <div class="col-xs">
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="row middle-xs" style="border: 1px solid silver; margin-bottom: 0.2em">
-                        <div class="col-xs-1 end-xs padding-v">
+                        <div class="col-xs-2 end-xs padding-v">
                             <ui-icon-button icon="add" class="cursor-pointer"></ui-icon-button>
                         </div>
 
@@ -40,7 +40,7 @@
                          style="border: 1px solid silver; margin-bottom: 0.2em">
                         <div v-if="editingId!==item.Id" style="padding: 0.3em 0">
                             <div class="row middle-xs">
-                                <div class="col-xs-1 end-xs">
+                                <div class="col-xs-2 center-xs">
                                     <ui-icon-button button-type="button" @click="editRecord(item.Id)" type="secondary"
                                                     class="cursor-pointer"
                                                     icon="edit">

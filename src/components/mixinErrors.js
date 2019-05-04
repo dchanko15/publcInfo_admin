@@ -17,7 +17,7 @@ export default {
             this.errorMessages.length = 0;
             if (result && result.errors) {
                 this.errorMessages = result.errors.reduce(function (errStr, curr, ind) {
-                    errStr.push({fieldNo: ind, message: curr.msg});
+                    errStr.push({fieldNo: ind, message: curr});
                     return errStr;
                 }, []);
                 errs = true;

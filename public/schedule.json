@@ -4,7 +4,7 @@
     {
       "startDate": "2018-01-01 00:00",
       "endDate": "3000-02-08 10:00",
-      "scheduleStage": 0
+      "scheduleStage": 1
     }
   ],
   "navMenu": [
@@ -31,10 +31,16 @@
       },
       "menuItems": [
         [
-          "/profile",
-          "პროფილი",
+          "/info-requests",
+          "მოთხოვნები",
           "svg",
           "icon-user"
+        ],
+        [
+          "/request-info",
+          "გამოქვეყნება",
+          "svg",
+          "icon-info"
         ]
       ]
     }

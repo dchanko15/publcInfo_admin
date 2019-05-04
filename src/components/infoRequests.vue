@@ -63,7 +63,7 @@
                                 <div class="col-xs-12" style="border-top: 1px solid silver; padding: 0.5em ">
                                     {{req.MailBody}}
                                     <div v-if="req.AttachmentUrl!==null">
-                                        <a :href="req.AttachmentUrl" target="_blank">მიმაგრებული ფაილი</a>
+                                        <a :href="$globalState.apiUrl+'/GetVisitorsFile/' + req.Id" target="_blank">მიმაგრებული ფაილი</a>
                                     </div>
                                 </div>
                             </div>

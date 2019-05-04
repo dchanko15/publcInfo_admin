@@ -24,7 +24,7 @@
         mixins: [mixinMenu],
         data: function () {
             return {
-                allowedStages: [0],
+                allowedStages: [1],
             }
         },
     }

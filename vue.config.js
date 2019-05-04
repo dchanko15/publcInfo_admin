@@ -3,6 +3,18 @@ module.exports = {
         ? '/publicinfo/'
         : '/',
     devServer: {
-        proxy:  'http://localhost:5000/'
+        proxy:  {
+            '/Publicinfo/api': {
+                target: 'http://172.16.30.12/',
+                changeOrigin: true
+            },
+            '/public': {
+                pathRewrite: {
+                    '^/public': '/Publicinfo/public', // rewrite path
+                },
+                target: 'http://172.16.30.12/',
+                changeOrigin: true
+            },
+        }
     }
 }

@@ -67,7 +67,7 @@
             </div>
 
         </div>
-        <modal-message ref="server-errors" :error-messages="errorMessages"
+        <modal-message ref="errors-modal" :error-messages="errorMessages"
                        info="გადაამოწმეთ შეტანილი ინფორმაცია"></modal-message>
     </div>
 </template>

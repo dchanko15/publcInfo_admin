@@ -16,14 +16,21 @@ import './assets/css/style.css'
 
 
 async function getUrl(url) {
-    let link ;
-    if (process.env.NODE_ENV !== "production" && globalState.apiUrl==="/testData" ) {
+    let link;
+    if (process.env.NODE_ENV !== "production" && globalState.apiUrl === "/testData") {
 
         link = globalState.apiUrl + url + ".json";
     } else
         link = globalState.apiUrl + url;
 
     return await axios.get(link);
+}
+
+async function postUrl(url, data, options) {
+    if (globalState.apiUrl !== "/testData") {
+        return await axios.post(globalState.apiUrl + url, data, options);
+    } else
+        return {status: 200}
 }
 
 async function loadData() {
@@ -56,6 +63,7 @@ async function loadData() {
 axios.defaults.withCredentials = true;
 Vue.prototype.$axios = axios;
 Vue.prototype.$getData = getUrl;
+Vue.prototype.$postData = postUrl;
 
 
 Vue.use(KeenUI);

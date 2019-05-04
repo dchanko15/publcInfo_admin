@@ -15,7 +15,7 @@ const globalState = {
 
     user: {
         userId: 0,
-        role: -1,
+        role: 1,
         lastName: '',
         firstName: ''
     },

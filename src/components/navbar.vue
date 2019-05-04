@@ -1,21 +1,21 @@
 <template>
-    <div style="position: fixed; top:0; left:5px;  right:0px; z-index:10;  ">
+    <div style="position: fixed; top:0; left:5px;  right:0px; z-index:1;  ">
         <div class="topnav" :class="{responsive: isCollapsed, shrinked: isShrinked   }">
             <div class="fullWidthContainer">
-                <a class="responsiveMenuIcon" @click="showMenu()">
+                <a class="menuIcon" @click="showMenu()">
                     <svg width="20px" height="20px" fill="#0d6d8e">
-                        <use xlink:href="svgicons1.svg#icon-menu"/>
+                        <use xlink:href="svgIcon(icon-menu)"/>
                     </svg>
                 </a>
                 <div class="logo">
-                    <span style="font-weight: bold"> შეფასებისა და გამოცდების ეროვნული ცენტრი</span>
+                    <img src="../assets/img/naecLogo.png">
                 </div>
 
                 <!--  <div class="mobile"></div>-->
-                <div class="itemContainer">
+                <div class="menuItemContainer">
                     <div v-for="menuItem in navmenu" :key="menuItem[0]">
                         <router-link v-if="menuItem[0][0]!=='#'" :to="menuItem[0]">
-                            <svg v-if="menuItem[2]==='svg'" width="24px" height="24px" fill="rgba(255,255,255,0.8)">
+                            <svg v-if="menuItem[2]==='svg'" width="24px" height="24px">
                                 <use :xlink:href="svgIcon(menuItem[3])"/>
                             </svg>
                             <i v-if="menuItem[2] && menuItem[2]!=='svg'" :class="menuItem[2]"
@@ -25,7 +25,7 @@
                             </div>
                         </router-link>
                         <a v-else :href="menuItem[0]">
-                            <svg v-if="menuItem[2]==='svg'" width="24px" height="24px" fill="rgba(255,255,255,0.8)">
+                            <svg v-if="menuItem[2]==='svg'" width="24px" height="24px">
                                 <use :xlink:href="svgIcon(menuItem[3])"/>
                             </svg>
 
@@ -75,7 +75,7 @@
                 }
             },
             svgIcon(iconName) {
-                return 'svgicons1.svg#' + iconName
+                return this.$globalState.baseUrl + 'svgicons1.svg#' + iconName
             }
         },
         // bind event handlers to the `handleResize` method (defined below)
@@ -89,52 +89,16 @@
     }
 </script>
 
-<style>
+<style scoped>
     .topnav {
         overflow: hidden;
-        -background-color: transparent;
         transition: 0.4s;
-        padding: 28px 32px;
+        padding-top: 12px;
         width: 100%;
         font-family: bpg_web_001_caps, sans-serif;
         font-size: 1.1em;
-        color: #149dcc;
-
-    }
-
-
-    .topnav .logo {
-        display: flex;
-
-        -float: left;
-        transition: 0.4s;
-        justify-content: center;
-        font-size: 2em;
-        line-height: 1.1;
-
-
-    }
-
-    .topnav .logo img {
-        height: 120px;
-
-    }
-
-    a.logo:hover {
-        border: none
-    }
-
-    .topnav .companyName {
-        font-family: bpg_web_001_caps, sans-serif;
-        padding-left: 0.1em;
-        text-align: left;
-
-        font-size: 4em;
-        -color: #23589a;
-        color: rgba(255, 255, 255, 0.8);
-        display: inline-block;
-        max-width: 290px;
-        top: 5px;
+        color: var(--header-color);
+        background-color: rgba(240, 240, 240, 0.7);
     }
 
     .topnav .fullWidthContainer {
@@ -147,10 +111,47 @@
 
     }
 
-    .topnav .itemContainer {
+    .topnav .logo {
+
+        float: left;
+        transition: 0.4s;
+        justify-content: center;
+        font-size: 2em;
+        line-height: 1.1;
+
+
+    }
+
+    .topnav .logo img {
+        max-height: 110px;
+    }
+
+    a.logo:hover {
+        border: none
+    }
+
+    .topnav .companyName {
+        font-family: bpg_web_001_caps, sans-serif;
+        padding-left: 0.1em;
+        text-align: left;
+
+        font-size: 4em;
+
+
+        display: inline-block;
+        max-width: 290px;
+        top: 5px;
+    }
+
+
+    .topnav .menuItemContainer {
         display: flex;
         justify-content: flex-end;
         padding-top: 10px;
+
+
+        color: var(--header-color);
+        fill: var(--header-color);
 
     }
 
@@ -163,8 +164,8 @@
         padding: 0.5em 0.7em 0.5em 0.7em;
         text-decoration: none;
 
-        -color: #0d6d8e;
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--header-color);
+        fill: var(--header-color);
         transition: 0.3s;
         display: inline-block;
         align-items: center;
@@ -179,7 +180,7 @@
     .topnav a:hover {
         --border-bottom: 2px solid #149dcc;
         -border-bottom: 2px solid #0d6d8e;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+        border-bottom: 2px solid var(--header-color);
 
     }
 
@@ -210,7 +211,7 @@
         -font-size: 2em;
     }
 
-    .topnav .responsiveMenuIcon {
+    .topnav .menuIcon {
         display: none;
     }
 
@@ -231,7 +232,7 @@
 
         }
 
-        .topnav .itemContainer {
+        .topnav .menuItemContainer {
             flex-direction: column;
             -background-color: white;
             opacity: 1;
@@ -246,14 +247,14 @@
             display: none;
         }
 
-        .topnav .responsiveMenuIcon {
+        .topnav .menuIcon {
             float: right;
             display: block;
             cursor: pointer;
             border: none;
         }
 
-        .topnav .responsiveMenuIcon:hover {
+        .topnav .menuIcon:hover {
             border: none;
 
         }
@@ -265,7 +266,7 @@
 
         }
 
-        .topnav.responsive .responsiveMenuIcon {
+        .topnav.responsive .menuIcon {
             float: right;
             display: block;
             cursor: pointer;
@@ -273,7 +274,7 @@
         }
 
 
-        .topnav.responsive .responsiveMenuIcon:hover {
+        .topnav.responsive .menuIcon:hover {
 
             border: none;
         }
@@ -292,7 +293,7 @@
 
         }
 
-        .topnave.responsive .responsiveMenuIcon:hover {
+        .topnave.responsive .menuIcon:hover {
             background-color: rgba(3, 3, 3, 0.5);
             border-bottom: none;
             color: white;

@@ -10,7 +10,7 @@
                 <div class="logo">
                     <img src="../assets/img/naecLogo.png">
                 </div>
-
+                <div style="font-size: 2em;  text-align: right ">   საჯარო ინფორმაცია</div>
                 <!--  <div class="mobile"></div>-->
                 <div class="menuItemContainer">
                     <div v-for="menuItem in navmenu" :key="menuItem[0]">
@@ -35,6 +35,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
         <span v-show="userName"> {{userName}}</span>
@@ -114,6 +115,7 @@
     .topnav .logo {
 
         float: left;
+        -display: flex;
         transition: 0.4s;
         justify-content: center;
         font-size: 2em;
@@ -146,6 +148,7 @@
 
     .topnav .menuItemContainer {
         display: flex;
+        -clear: both;
         justify-content: flex-end;
         padding-top: 10px;
 
@@ -161,7 +164,7 @@
 
     .topnav a {
         border: 2px solid transparent;
-        padding: 0.5em 0.7em 0.5em 0.7em;
+        padding: 0.2em 0.7em 0.2em 0.7em;
         text-decoration: none;
 
         color: var(--header-color);

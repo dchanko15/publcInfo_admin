@@ -26,9 +26,9 @@ async function getUrl(url) {
     return await axios.get(link);
 }
 
-async function postUrl(url, data, options) {
+async function postUrl(url, data) {
     if (globalState.apiUrl !== "/testData") {
-        return await axios.post(globalState.apiUrl + url, data, options);
+        return await axios.post(globalState.apiUrl + url, data);
     } else
         return {status: 200}
 }

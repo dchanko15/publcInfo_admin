@@ -45,10 +45,6 @@
                             <div class="row ">
                                 <div class="col-xs" style="text-align: right">
                                     <ui-button color="primary" icon-position="right">
-                                        <!-- <div slot="icon">
-                                           <i class="fas fa-2x fa-sign-in-alt"></i>
-                                         </div>
-                                         -->
                                         ავტორიზაცია
                                         <div slot="icon">
                                             <svg height="20px" width="20px" fill="white">
@@ -61,7 +57,7 @@
                                 </div>
                             </div>
                         </form>
-                        <hr>
+
                     </div>
                 </section>
             </div>
@@ -99,31 +95,32 @@
                 try {
                     let validationResult = await this.$validator.validateAll();
                     if (validationResult) {
-                        this.$router.push('/accommodation');
-                       /* let postData = {userName: this.userName, password: this.password};
-                        let postRes = await this.$axios.post(this.$globalState.apiUrl + '/login', postData);
+
+                        let postData = {Id: this.userName, Password: this.password};
+
+                        let postRes = await this.$axios.post(this.$globalState.apiUrl+'/GetNaecUsers', postData);
                         let results = postRes.data;
-                        if (this.ServerErrors(postRes)) {
-                            this.displayErrors()
-                        } else {
+                         if (this.ServerErrors(postRes)) {
+                             this.displayErrors()
+                         } else {
 
                             this.userId = +results.userId;
-                            this.role = +results.role;
+                            this.role =1;
                             this.loginSuccess();
-                        }*/
+                        }
 
                     } else {
-                        this.displayErrors('')
+                        this.showErrors('')
                     }
                 } catch (err) {
-                    this.displayErrors(err.message)
+                    this.showErrors("ამ პარამეტრებით მომხმარებელი ვერ მოიძებნა.")
                 }
             },
 
             loginSuccess() {
                 this.$globalState.user.userId = this.userId;
                 this.$globalState.user.role = this.role;
-                this.$router.push('/reg-data');
+                this.$router.push('/request-info');
             },
         }
 

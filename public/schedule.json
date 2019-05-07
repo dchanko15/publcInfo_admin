@@ -10,7 +10,7 @@
   "navMenu": [
     {
       "role": -1,
-      "scheduleStage": 0,
+      "scheduleStage": 1,
       "options": {
         "readonly": 0
       },

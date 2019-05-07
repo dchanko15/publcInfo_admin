@@ -9,6 +9,7 @@ import vCategoryItems from './views/v-categoryItems.vue';
 
 import vInfoRequests from './views/v-infoRequests.vue';
 import v404 from './views/v-404'
+import vLogin from './views/v-login.vue';
 
 
 import {Roles} from "./components/globalstate";
@@ -23,6 +24,8 @@ export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
+        {path: '/', redirect:'/login'},
+        {path: '/login', name: 'login', component: vLogin},
         {path: '/request-info', name: 'requestInfo', component: vIndex},
         {path: '/home', name: 'home', component: vHome},
         {path: '/item/:id', name: 'items', component: vCategoryItems},

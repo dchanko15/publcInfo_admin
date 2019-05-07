@@ -3,7 +3,7 @@
         <bg></bg>
         <nav-bar shrinked="" :menu="getMenu()"></nav-bar>
         <div class="container" style="margin-top: 70px; text-align: left ">
-            <request-info></request-info>
+                <login></login>
         </div>
     </div>
 </template>
@@ -12,20 +12,24 @@
     import navBar from '../components/navbar'
     import bg from '../components/background'
     import mixinMenu from '../components/mixinMenu'
-    import requestInfo from '../components/requestInfo'
+    import login from '../components/userLogin'
 
     export default {
-        name: "v-requestInfo",
+        name: "v-index",
         components: {
             'nav-bar': navBar,
             'bg': bg,
-            'request-info': requestInfo,
+            login,
         },
-        mixins: [mixinMenu]
+        mixins: [mixinMenu],
+        data: function () {
+            return {
+                allowedStages: [1],
+            }
+        },
     }
 </script>
 
 <style scoped>
 
 </style>
-

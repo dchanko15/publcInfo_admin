@@ -17,8 +17,7 @@ import './assets/css/style.css'
 
 async function getUrl(url) {
     let link;
-    if (process.env.NODE_ENV !== "production" && globalState.apiUrl === "/testData") {
-
+    if (globalState.apiUrl.indexOf("/testData") !== -1) {
         link = globalState.apiUrl + url + ".json";
     } else
         link = globalState.apiUrl + url;
@@ -27,7 +26,7 @@ async function getUrl(url) {
 }
 
 async function postUrl(url, data) {
-    if (globalState.apiUrl !== "/testData") {
+    if (globalState.apiUrl.indexOf("/testData") === -1) {
         return await axios.post(globalState.apiUrl + url, data);
     } else
         return {status: 200}

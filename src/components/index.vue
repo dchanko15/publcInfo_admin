@@ -7,12 +7,6 @@
                         <div class="col-xs start-xs" >
                             <h4>გამოქვეყნებული ინფორმაცია</h4>
                         </div>
-                        <div class="col-xs">
-
-                            <ui-button button-type="button" type="primary" color="primary" @click="$router.push('/request-info')">
-                                ინფორმაციის მოთხვნა
-                            </ui-button>
-                        </div>
                     </div>
 
                     <div>

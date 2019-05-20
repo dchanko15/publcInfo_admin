@@ -1,17 +1,17 @@
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
-        ? '/publicinfo/'
-        : '/',
+        ? '/publicinfoAdmin/'
+        : '/publicinfoAdmin/',
     devServer: {
         proxy:  {
-            '/publicinfo/api': {
+            '/publicinfoAdmin/api': {
                 target: 'http://80.241.242.124/',
                 changeOrigin: true
             },
-            '/public': {
-                pathRewrite: {
-                    '^/public': '/publicinfo/public', // rewrite path
-                },
+            '/publicinfoAdmin/public': {
+             /*   pathRewrite: {
+                    '^/public': '/publicinfo-admin/public', // rewrite path
+                },*/
                 target: 'http://80.241.242.124/',
                 changeOrigin: true
             },

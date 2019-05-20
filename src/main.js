@@ -35,7 +35,7 @@ async function postUrl(url, data) {
 async function loadData() {
     try {
         let d = new Date;
-        let response = await axios.get("/schedule.json");
+        let response = await axios.get(globalState.baseUrl + "/schedule.json");
         Vue.prototype.$globalState = Vue.observable(globalState);
         globalState.categories = [];
         globalState.subCategories = [];

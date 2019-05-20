@@ -123,11 +123,7 @@
 
                                 <div class="col-xs padding-all">
                                     <div>{{item.PublishDate}}</div>
-                                    <!--<a :href="$globalState.baseUrl+item.Url" target="_blank">
-                                        {{item.Name}}
-                                    </a>-->
-
-                                    <a :href="$globalState.baseUrl +item.Url" target="_blank">
+                                    <a :href="$globalState.baseUrl + item.Url" target="_blank">
                                         {{item.Name}}
                                     </a>
 

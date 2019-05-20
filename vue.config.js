@@ -4,15 +4,15 @@ module.exports = {
         : '/',
     devServer: {
         proxy:  {
-            '/Publicinfo/api': {
-                target: 'http://172.16.30.12/',
+            '/publicinfo/api': {
+                target: 'http://80.241.242.124/',
                 changeOrigin: true
             },
             '/public': {
                 pathRewrite: {
-                    '^/public': '/Publicinfo/public', // rewrite path
+                    '^/public': '/publicinfo/public', // rewrite path
                 },
-                target: 'http://172.16.30.12/',
+                target: 'http://80.241.242.124/',
                 changeOrigin: true
             },
         }

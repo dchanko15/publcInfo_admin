@@ -1,7 +1,5 @@
 
-
-
-:root{
+:root {
     --text-color: #0d5473;
     --header-color: #0d6d8e;
     --link-color: #23589a;
@@ -16,14 +14,13 @@
 }
 
 
-
 html {
     font-size: 90%;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family:  bpg_Arial, bpg_web_001_regular, sans-serif;
+    font-family: bpg_Arial, bpg_web_001_regular, sans-serif;
     font-size: 0.9em;
     color: var(--text-color);
 }
@@ -131,7 +128,7 @@ section {
     padding: 1.5em;
     color: rgba(0, 0, 0, 0.9);
     margin: 90px 2.1em 1.2em 1.2em;
-    font-family:  bpg_Arial, bpg_web_001_regular, sans-serif;
+    font-family: bpg_Arial, bpg_web_001_regular, sans-serif;
 }
 
 .blink {
@@ -168,6 +165,13 @@ section {
 
 .visible {
     display: block;
+}
+
+.font-small {
+    font-size: small;
+}
+.font-medium {
+    font-size: medium;
 }
 
 .font-bold {
@@ -273,5 +277,26 @@ section {
     text-align: right;
 }
 
+.z-index-5 {
+    z-index: 5;
+}
 
+.z-index-10 {
+    z-index: 10;
+}
 
+.z-index-20 {
+    z-index: 20;
+}
+
+.z-index-30 {
+    z-index: 30;
+}
+
+.z-index-40 {
+    z-index: 40;
+}
+
+.z-index-50 {
+    z-index: 50;
+}

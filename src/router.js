@@ -26,11 +26,11 @@ export default new Router({
     routes: [
         {path: '/', redirect:'/login'},
         {path: '/login', name: 'login', component: vLogin},
-        {path: '/request-info', name: 'requestInfo', component: vIndex},
+        {path: '/request-info', name: 'requestInfo', component: vIndex, meta: {role: 1}},
         {path: '/home', name: 'home', component: vHome},
-        {path: '/item/:id', name: 'items', component: vCategoryItems},
+        {path: '/item/:id', name: 'items', component: vCategoryItems, meta: {role: 1}},
 
-        {path: '/info-requests', name: 'infoRequests', component: vInfoRequests},
+        {path: '/info-requests', name: 'infoRequests', component: vInfoRequests, meta: {role: 1}},
         {path: '/restricted', name: 'restricted', component: vRestricted},
 
         /*  {
